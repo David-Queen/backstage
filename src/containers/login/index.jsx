@@ -1,14 +1,15 @@
 import React, {Component} from 'react';
 import {Form, Input, Icon, Button, message} from 'antd';
-
 import {reqLogin} from '../../api';
-
+import withCheckLogin from '@conts/with-check-login';
 import {connect} from 'react-redux';
 import {saveUser} from '@redux/action-creators';
 
 import logo from './logo.png';
 import './index.less';
 
+
+@withCheckLogin
 @connect(
     null,
     {saveUser}
@@ -41,9 +42,6 @@ class Login extends Component {
         callback();
     };
 
-    /**
-     * 登录函数
-     */
     login = (e) => {
         // 禁止浏览器默认行为
         e.preventDefault();
