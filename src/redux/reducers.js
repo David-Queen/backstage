@@ -1,6 +1,6 @@
 import {combineReducers} from 'redux';
-import {SAVE_USER} from './action-types';
-import {setItem, getItem} from '../utils/storage';
+import {SAVE_USER, REMOVE_USER, SET_TITLE, GET_CATEGORIES_SUCCESS, ADD_CATEGORY_SUCCESS,UPDATE_CATEGORY_SUCCESS,DEL_CATEGORY_SUCCESS} from './action-types';
+import {setItem, getItem, removeItem} from '../utils/storage';
 
 // 初始化数据
 const initUser = {
@@ -15,11 +15,51 @@ function user(prevState = initUser, action) {
             setItem('user', action.data.user);
             setItem('token', action.data.token);
             return action.data;
+        case REMOVE_USER:
+            removeItem('user');
+            removeItem('token');
+            return {
+                user: {},
+                token: ''
+            }
         default :
             return prevState;
     }
 }
 
+
+function title(prevState = '', action) {
+    switch (action.type) {
+        case SET_TITLE:
+            return action.data;
+        default:
+            return prevState
+    }
+}
+
+function categories(prevState = [], action) {
+    switch (action.type) {
+        case GET_CATEGORIES_SUCCESS :
+            return action.data;
+        case ADD_CATEGORY_SUCCESS :
+            return [...prevState, action.data];
+        case UPDATE_CATEGORY_SUCCESS :
+            return prevState.map((category) => {
+                if (category._id === action.data._id) {
+                    return action.data
+                }
+                return category;
+            })
+        case DEL_CATEGORY_SUCCESS:
+            return  prevState.filter((category) => category._id !== action.data);
+        default :
+            return prevState;
+    }
+}
+
+
 export default combineReducers({
     user,
+    title,
+    categories
 })

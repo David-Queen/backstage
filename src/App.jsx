@@ -25,7 +25,7 @@ class App extends Component {
                         </Switch>
                     </BasicLayout>
                 </Switch>
-            </Router>;
+            </Router>
         </Suspense>
     }
 }
