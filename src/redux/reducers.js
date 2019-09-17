@@ -1,5 +1,13 @@
 import {combineReducers} from 'redux';
-import {SAVE_USER, REMOVE_USER, SET_TITLE, GET_CATEGORIES_SUCCESS, ADD_CATEGORY_SUCCESS,UPDATE_CATEGORY_SUCCESS,DEL_CATEGORY_SUCCESS} from './action-types';
+import {
+    SAVE_USER,
+    REMOVE_USER,
+    SET_TITLE,
+    GET_CATEGORIES_SUCCESS,
+    ADD_CATEGORY_SUCCESS,
+    UPDATE_CATEGORY_SUCCESS,
+    DEL_CATEGORY_SUCCESS
+} from './action-types';
 import {setItem, getItem, removeItem} from '../utils/storage';
 
 // 初始化数据
@@ -51,7 +59,7 @@ function categories(prevState = [], action) {
                 return category;
             })
         case DEL_CATEGORY_SUCCESS:
-            return  prevState.filter((category) => category._id !== action.data);
+            return prevState.filter((category) => category._id !== action.data);
         default :
             return prevState;
     }

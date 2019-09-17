@@ -1,6 +1,3 @@
-/*
-  包含n个 生产action对象工厂函数 模块
- */
 import {
     SAVE_USER,
     REMOVE_USER,
@@ -52,8 +49,8 @@ export const updateCategory = (categoryId, categoryName) => {
 
 const delCategorySuccess = (category) => ({type: DEL_CATEGORY_SUCCESS, data: category});
 // 删除分类数据
-export const delCategory = (categoryName) => {
-    return (dispatch) => {
-        // this.delete()
-    }
+export const delCategory = (category) => {
+    // return (dispatch) => {
+    //     // this.delete()
+    // }
 };

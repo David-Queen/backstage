@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Form, Input } from 'antd';
+import React, {Component} from 'react';
+import {Form, Input} from 'antd';
 import PropTypes from 'prop-types';
 
 @Form.create()
@@ -19,8 +19,8 @@ class UpdateCategoryForm extends Component {
     };
 
     render() {
-        const { categoryName } = this.props;
-        const { getFieldDecorator } = this.props.form;
+        const {categoryName} = this.props;
+        const {getFieldDecorator} = this.props.form;
 
         return <Form>
             <Form.Item label="分类名称">
@@ -28,7 +28,7 @@ class UpdateCategoryForm extends Component {
                     getFieldDecorator(
                         'categoryName', {
                             rules: [
-                                { validator: this.validator }
+                                {validator: this.validator}
                             ],
                             initialValue: categoryName
                             //没有值时生效

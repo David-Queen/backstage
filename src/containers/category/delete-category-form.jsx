@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import {Form, Input} from 'antd';
+import {Form} from 'antd';
 
 @Form.create()
-class AddCategoryForm extends Component {
+class DelCategoryForm extends Component {
     render() {
 
         const {getFieldDecorator} = this.props.form;
@@ -12,12 +12,8 @@ class AddCategoryForm extends Component {
                 {
                     getFieldDecorator(
                         'categoryName', {
-                            rules: [
-                                {required: true, message: '分类名称不能为空！'}
-                            ]
+                            rules: []
                         }
-                    )(
-                        <Input placeholder="请输入分类名称"/>
                     )
                 }
             </Form.Item>
@@ -25,4 +21,4 @@ class AddCategoryForm extends Component {
     }
 }
 
-export default AddCategoryForm;
+export default DelCategoryForm;

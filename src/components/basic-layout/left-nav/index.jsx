@@ -92,7 +92,7 @@ class LeftNav extends Component {
     };
 
     componentDidMount() {
-        const { location : {pathname} } = this.props;
+        const {location: {pathname}} = this.props;
         const title = this.findTitle(pathname);
         this.props.setTitle(title);
     }

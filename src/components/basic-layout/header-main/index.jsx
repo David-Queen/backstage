@@ -55,7 +55,7 @@ class HeaderMain extends Component {
         //设置定时器
         setInterval(() => {
             this.setState({
-                time:formatDate()
+                time: formatDate()
                 // time:dayjs().format('YYYY-MM-DD HH:mm:ss')
             })
         }, 1000)

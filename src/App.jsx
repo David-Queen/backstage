@@ -1,6 +1,6 @@
-import React, { Component, Suspense } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { Spin } from 'antd';
+import React, {Component, Suspense} from 'react';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import {Spin} from 'antd';
 
 import Login from '@conts/login';
 import NotMatch from '@comps/not-match';

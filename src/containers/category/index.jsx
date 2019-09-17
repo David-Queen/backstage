@@ -24,7 +24,7 @@ class Category extends Component {
 
     columns = [
         {
-            title: '品类名称', // 表头名称
+            title: '分类名称', // 表头名称
             dataIndex: 'name', // 必须唯一，否则报错
         },
         {
@@ -44,7 +44,7 @@ class Category extends Component {
         Modal.confirm({
             title: '您确定要删除此条数据吗？',
             onOk: () => {
-                this.props.delCategory(category._id)
+                // this.props.delCategory(category)
             },
             okText: '确认',
             cancelText: '取消'

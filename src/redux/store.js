@@ -1,9 +1,10 @@
-import { createStore, applyMiddleware } from 'redux';
+import {createStore, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
-import { composeWithDevTools } from 'redux-devtools-extension';
-import { isEnv } from '@config';
+import {composeWithDevTools} from 'redux-devtools-extension';
+import {isEnv} from '@config';
 
 import reducers from './reducers';
+
 let store;
 if (isEnv) {
     // 开发环境
